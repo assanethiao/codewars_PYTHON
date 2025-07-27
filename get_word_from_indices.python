@@ -1,0 +1,40 @@
+"""
+Jenny a 9 ans et est la plus jeune détective d’Amérique du Nord.
+Lorsqu’une nouvelle mission arrive, elle reçoit un code sous forme 
+d’un autocollant (tableau de 3 nombres) dans son cahier de maths 
+et un commentaire (une phrase) dans son cahier de rédaction.
+
+Le but est de trouver un mot en récupérant 3 lettres dans la phrase, 
+aux positions indiquées par les nombres du tableau (les indices).
+
+- Chaque nombre indique la position d’une lettre dans la phrase, 
+  en ignorant les espaces.
+- Les indices sont donnés dans l’ordre croissant.
+- Le mot retourné doit être en minuscules.
+- Si un indice est invalide (hors de portée), il faut retourner 
+  "No mission today".
+
+Exemple :
+Input : [5, 0, 3], "I Love You"
+Output : "ivy"
+(Car 0 = 'i', 3 = 'v', 5 = 'y' en ignorant les espaces)
+"""
+
+
+def missing(nums, s):
+    arrayNoSpace = []
+    wordSearch = ""
+    
+    
+    for i in s:
+        if i != " ":
+            arrayNoSpace.append(i)
+    
+    
+    nums = sorted(nums)
+    for i in nums:
+        if i >= len(arrayNoSpace):
+            return "No mission today"
+        wordSearch += arrayNoSpace[i]
+    
+    return wordSearch.lower()
