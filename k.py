@@ -1,19 +1,13 @@
-Description:
-Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+"""
+Implement a function that computes the difference between two lists. The function should remove all occurrences
+of elements from the first list (a) that are present in the second list (b). The order of elements in the first list should be preserved in the result.
 
-Rules for a smiling face:
+Examples
+If a = [1, 2] and b = [1], the result should be [2].
 
-Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
-A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
-Every smiling face must have a smiling mouth that should be marked with either ) or D
-No additional characters are allowed except for those mentioned.
+If a = [1, 2, 2, 2, 3] and b = [2], the result should be [1, 3].
 
-Valid smiley face examples: :) :D ;-D :~)
-Invalid smiley faces: ;( :> :} :]
 
-Example
-countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
-countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
-countSmileys([';]', ':[', ';*', ':$', ';-D']); // should return 1;
-Note
-In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same.
+"""
+def array_diff(a, b):
+    return [x for x in a if x not in b]
